@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webbplats labb2</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Arbetsloggen</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Registrerade erfarenheter</a></li>
+        <li><a href="/add.html">Lägga till</a></li>
+        <li><a href="/about.html">Om</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Lägg till ny erfarenhet</h2>
+    <div id="input-div">
+    <ul id="backend-error"></ul>
+    <ul id="frontend-error"></ul>
+    <form method="post" id="add-form">
+      <label for="companyname">Företagsnamn: </label>
+      <input type="text" name="companyname" id="companyname" placeholder="Företagsnamn">
+      <br>
+      <label for="jobtitle">Arbetstitel: </label>
+      <input type="text" name="jobtitle" id="jobtitle" placeholder="Arbetstitel">
+      <br>
+      <label for="location">Arbetets plats: </label>
+      <input type="text" name="location" id="location" placeholder="Arbetets plats">
+      <br>
+      <label for="startdate">Startdatum: </label>
+      <input type="text" name="startdate" id="startdate" placeholder="åååå-mm-dd">
+      <br>
+      <label for="enddate">Slutdatum: </label>
+      <input type="text" name="enddate" id="enddate" placeholder="åååå-mm-dd">
+      <br>
+      <label for="description">Beskrivning: </label>
+      <textarea id="description" name="description" placeholder="Beskrivning:" rows="4" cols="50"></textarea>
+      <br>
+      <input type="submit" id="addButton" value="Lägg till">
+    </form>
+    </div>
+  </main>
+  <footer>
+    <h3>Arbetsloggen 2026</h3>
+    <p>Av: Emma Heikkinen, emhe2504@student.miun.se</p>
+  </footer>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
