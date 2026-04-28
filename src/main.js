@@ -124,5 +124,42 @@ function renderWork(jsonData) {
 
         ulList.append(compLi, jobtLi, locLi, startLi, endLi, descLi, deleteLi);
         listDiv.appendChild(ulList);
+
+        deleteList(id);
     });
+}
+
+
+
+
+//Ta bort lista på webbsida
+
+function deleteList(id) {
+
+    const list = document.getElementById(`ul-${id}`);
+    const deleteButton = document.getElementById(`button-${id}`);
+
+    deleteButton.addEventListener("click", () => {
+
+        list.remove();
+        deleteWork(id);
+    })
+}
+
+
+
+
+//Ta bort work från API, med id
+
+async function deleteWork(id) {
+
+    let response = await fetch(`http://localhost:3000/works/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    let data = await response.json();
+    console.log(data);
 }
