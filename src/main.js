@@ -91,9 +91,17 @@ function renderWork(jsonData) {
         const companyname = element.companyname;
         const jobtitle = element.jobtitle;
         const location = element.location;
-        const startdate = element.startdate;
-        const enddate = element.enddate;
         const description = element.description;
+
+        //Justera format på start- och slutdatum (utan tid)
+
+        const startdate = element.startdate;
+        const newStartDate = new Date(startdate).toLocaleDateString('sv-SE');
+
+        const enddate = element.enddate;
+        const newEndDate = new Date(enddate).toLocaleDateString('sv-SE');
+
+        // Skapa arbets-listor
 
         const ulList = document.createElement("ul");
         ulList.id = `ul-${id}`;
@@ -108,10 +116,10 @@ function renderWork(jsonData) {
         locLi.textContent = location;
 
         const startLi = document.createElement("li");
-        startLi.textContent = "Startdatum: " + startdate;
+        startLi.textContent = "Startdatum: " + newStartDate;
 
         const endLi = document.createElement("li");
-        endLi.textContent = "Slutdatum: " + enddate;
+        endLi.textContent = "Slutdatum: " + newEndDate;
 
         const descLi = document.createElement("li");
         descLi.textContent = description;
