@@ -216,7 +216,7 @@ function deleteList(id) {
 
 async function deleteWork(id) {
 
-    let response = await fetch(`https://lab3-dt207g-webbtj.onrender.com/${id}`, {
+    let response = await fetch(`https://lab3-dt207g-webbtj.onrender.com/works/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
