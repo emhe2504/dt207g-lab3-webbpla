@@ -49,6 +49,27 @@ async function addWork() {
     });
 
     let data = await response.json();
+    
+    //Om data.message finns, finns det valideringsError
+
+    if (data.message) {
+        const errorlist = document.getElementById("backend-error");
+        errorlist.innerHTML = "";
+        const Message = data.message;
+
+        Message.forEach(message => {
+            const li = document.createElement("li");
+            li.textContent = message;
+            errorlist.appendChild(li);
+        })
+    } else {
+        companyname.value = "";
+        jobtitle.value = "";
+        location.value = "";
+        startdate.value = "";
+        enddate.value = "";
+        description.value = "";
+    }
 
 }
 
