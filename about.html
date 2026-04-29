@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webbplats labb2</title>
+  <title>Arbetsloggen labb3</title>
   <link rel="stylesheet" href="/src/style.css">
 </head>
 
 <body>
   <header>
-    <h1>Arbetsloggen</h1>
+    <h1>Arbetsloggen MongoDB</h1>
     <nav>
       <ul>
         <li><a href="/index.html">Registrerade erfarenheter</a></li>
@@ -23,6 +23,21 @@
     <h2>Om</h2>
     <div id="about-div">
       <article>
+        <p>Arbetsloggen är en webbplats vars syfte är att lagra tidigare arbetslivserfarenheter, nästan som ett CV.
+          Användaren kan registrera sina erfarenheter via ett formulär under fliken "Lägga till". I listan där alla
+          tidigare erfarenheter lagras, under fliken "Registrerade erfarenheter", går det även att radera ett tidigare
+          arbete om så önskas.</p>
+        <p>För denna uppgift har vi fått testa NoSQL-databaser. I detta fall har jag använt MongoDB. Jag har laddat ner
+          Compass för uppgiften och använt den lite, men framför allt jag har gjort tester mot det skapade API:et via
+          Thunder Client.</p>
+        <p>Mina slutsatser av uppgiften är NoSQL-dataser är enklare och trevligare att arbeta mot än en SQL-databas.
+          Framförallt för att du slipper alla queries. Dock, förstår jag att olika arbeten kräver olika databaser
+          beroende på vad som ska lagras. En del är likt det vi gjorde i Laboration 2 och därmed har en del kod kunnat
+          återanvändas, men vissa saker har behövt korrigeras för denna uppgift. Det klurigaste har varit att hitta
+          information om hur webbtjänsten ska konstrueras och vilka kommandon/metoder som ska användas. Valideringen var
+          även lite klurig innan jag lyckade hitta hur jag kunde använda den "inbyggda" valideringen i MongoDB, istället
+          för att göra den manuella validering jag gjorde i Laboration 2. Överlag tycker jag att om MongoDB och hur det
+          har varit att skapa en REST-webbtjänst med NoSQL.</p>
       </article>
     </div>
   </main>
