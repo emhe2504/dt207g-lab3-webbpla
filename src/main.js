@@ -69,7 +69,7 @@ async function addWork() {
         description: descriptionInput.value
     }
 
-    let response = await fetch('http://localhost:3000/works', {
+    let response = await fetch('https://lab3-dt207g-webbtj.onrender.com/works', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -113,7 +113,7 @@ async function addWork() {
 
 async function fetchWork() {
 
-    const link = "http://localhost:3000/works";
+    const link = "https://lab3-dt207g-webbtj.onrender.com/works";
 
     try {
 
@@ -216,7 +216,7 @@ function deleteList(id) {
 
 async function deleteWork(id) {
 
-    let response = await fetch(`http://localhost:3000/works/${id}`, {
+    let response = await fetch(`https://lab3-dt207g-webbtj.onrender.com/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
