@@ -22,9 +22,38 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
+        if (!createErrorMessage())  //Om det finns fel körs inte addWork
+            return;
+
         addWork();
     })
 })
+
+
+//Frontend input-validering
+
+function createErrorMessage() {
+    const errors = [];
+    const errorList = document.getElementById("frontend-error");
+
+    errorList.innerHTML = "";
+
+    if (companyNameInput.value.trim() === "") errors.push("Ange företagsnamn");
+    if (jobTitleInput.value.trim() === "") errors.push("Ange arbetstitel");
+    if (locationInput.value.trim() === "") errors.push("Ange arbetets plats");
+    if (startDateInput.value.trim() === "") errors.push("Ange startdatum");
+    if (endDateInput.value.trim() === "") errors.push("Ange slutdatum");
+    if (descriptionInput.value.trim() === "") errors.push("Ange beskrivning");
+
+    errors.forEach(error => {
+        const li = document.createElement("li"); //li för varje error
+        li.textContent = `${error}`;
+        errorList.appendChild(li);
+    })
+
+    return errors.length === 0;
+}
+
 
 
 // Lägga till work i API
@@ -49,11 +78,13 @@ async function addWork() {
     });
 
     let data = await response.json();
-    
+
+
     //Om data.message finns, finns det valideringsError
 
+    const errorlist = document.getElementById("backend-error");
+
     if (data.message) {
-        const errorlist = document.getElementById("backend-error");
         errorlist.innerHTML = "";
         const Message = data.message;
 
@@ -62,13 +93,16 @@ async function addWork() {
             li.textContent = message;
             errorlist.appendChild(li);
         })
+
     } else {
-        companyname.value = "";
-        jobtitle.value = "";
-        location.value = "";
-        startdate.value = "";
-        enddate.value = "";
-        description.value = "";
+        errorlist.innerHTML = "";
+
+        companyNameInput.value = "";
+        jobTitleInput.value = "";
+        locationInput.value = "";
+        startDateInput.value = "";
+        endDateInput.value = "";
+        descriptionInput.value = "";
     }
 
 }

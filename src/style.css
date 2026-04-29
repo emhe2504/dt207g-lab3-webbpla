@@ -155,3 +155,99 @@ footer p {
     font-weight: bold;
 }
 
+@media screen and (max-width: 900px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    #list-div,
+    #input-div,
+    #about-div {
+        width: 80%;
+        margin: 4% auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    nav ul {
+        grid-template-columns: none;
+    }
+
+    nav ul li:nth-child(1) {
+        border-bottom: 1px solid white;
+    }
+
+    nav ul li:nth-child(2) {
+        border-bottom: 1px solid white;
+    }
+
+    h2 {
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
+
+    #backend-error,
+    #frontend-error {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    #list-div ul li {
+
+        font-size: 12px;
+    }
+
+    #list-div ul button {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    #add-form {
+        width: 85%;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input[type="text"] {
+        font-size: 12px;
+    }
+
+    input[type="submit"] {
+        margin-left: 1%;
+        font-size: 12px;
+    }
+
+    #backend-error,
+    #frontend-error {
+        font-size: 12px;
+    }
+}
